@@ -1,0 +1,74 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://i.postimg.cc/4y8Kz7hN/snake-plant.jpg",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 22,
+    "rating": 4.7,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "An elegant plant with white flowers that improves air quality.",
+    "image": "https://i.postimg.cc/ZRpgRXks/peace-lily.jpg",
+    "providerName": "NatureBloom"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 15,
+    "rating": 4.9,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "A healing plant that loves sunlight and minimal watering.",
+    "image": "https://i.postimg.cc/WzVnhyxT/aloe-vera.jpg",
+    "providerName": "GreenAura"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Spider Plant",
+    "category": "Hanging",
+    "price": 16,
+    "rating": 4.6,
+    "availableStock": 14,
+    "careLevel": "Easy",
+    "description": "Fast-growing plant with striped leaves that freshens any space.",
+    "image": "https://i.postimg.cc/tRsm7mHL/spider-plant.jpg",
+    "providerName": "UrbanLeaf"
+  },
+  {
+    "plantId": 5,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 25,
+    "rating": 4.8,
+    "availableStock": 9,
+    "careLevel": "Low",
+    "description": "A glossy green plant perfect for offices and low-light corners.",
+    "image": "https://i.postimg.cc/GpRZzSw1/zz-plant.jpg",
+    "providerName": "LeafyNest"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Pothos",
+    "category": "Trailing",
+    "price": 20,
+    "rating": 4.7,
+    "availableStock": 11,
+    "careLevel": "Easy",
+    "description": "Popular vine plant that grows fast and cleans indoor air.",
+    "image": "https://i.postimg.cc/ncX2hH0F/pothos.jpg",
+    "providerName": "BotaniCo"
+  }
+]

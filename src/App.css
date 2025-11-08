@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  background-color: #eafaf1;
+  min-height: 100vh;
+  padding: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  color: #2e7d32;
+  font-size: 2.5rem;
+}
+
+p {
+  color: #555;
+  font-size: 1.2rem;
+}
