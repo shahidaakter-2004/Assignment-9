@@ -6,18 +6,18 @@ function Footer() {
       <div>
         <h3>Quick Links</h3>
         <ul style={styles.links}>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#!" onClick={(e) => e.preventDefault()}>About</a></li>
+          <li><a href="#!" onClick={(e) => e.preventDefault()}>Contact</a></li>
+          <li><a href="#!" onClick={(e) => e.preventDefault()}>Privacy Policy</a></li>
         </ul>
       </div>
 
       <div>
         <h3>Follow Us</h3>
         <ul style={styles.social}>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Pinterest</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
         </ul>
       </div>
 
@@ -35,7 +35,7 @@ const styles = {
     textAlign: "center",
     color: "#2e7d32",
     marginTop: "40px",
-    boxShadow: "0 -2px 4px rgba(0,0,0,0.1)"
+    boxShadow: "0 -2px 4px rgba(0,0,0,0.1)",
   },
   links: {
     listStyle: "none",

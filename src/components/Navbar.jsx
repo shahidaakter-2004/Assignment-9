@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/eco-logo-removebg-preview.png"; // লোগো ইমেজ ইম্পোর্ট
+import logo from "../assets/eco-logo-removebg-preview.png";
 
 function Navbar() {
   return (
@@ -9,15 +9,14 @@ function Navbar() {
         <h2 style={styles.title}>GreenNest</h2>
       </div>
       <div style={styles.links}>
-        <a href="#">Home</a>
-        <a href="#">Plants</a>
-        <a href="#">My Profile</a>
+        <a href="#!" onClick={(e) => e.preventDefault()}>Home</a>
+        <a href="#!" onClick={(e) => e.preventDefault()}>Plants</a>
+        <a href="#!" onClick={(e) => e.preventDefault()}>My Profile</a>
       </div>
     </nav>
   );
 }
 
-// inline style object
 const styles = {
   navbar: {
     display: "flex",
