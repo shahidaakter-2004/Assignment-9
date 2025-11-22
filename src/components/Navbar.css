@@ -1,45 +1,67 @@
+/* Navbar container */
 .navbar {
-  background-color: #e8f5e9;
-  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #c8e6c9;
+  background-color: #e0fae3;
+  padding: 10px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5rem;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2e7d32;
-}
-
-.nav-links {
-  list-style: none;
+/* Logo + title container */
+.logo-container {
   display: flex;
-  gap: 25px;
-  font-size: 18px;
+  align-items: center;
+}
+
+/* Logo image */
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+/* Website Title */
+.title {
+  color: #17781c;
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Right side links */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Links style */
+.links a {
+  text-decoration: none;
+  color: #17781c;
+  font-size: 20px;
   font-weight: 500;
+  transition: 0.3s;
 }
 
-.nav-links li {
-  cursor: pointer;
+.links a:hover {
+  color: #4caf50;
 }
 
-.auth-buttons button {
+/* Logout Button */
+.logout-btn {
+  background-color: #17781c;
   border: none;
-  padding: 8px 16px;
-  margin-left: 10px;
-  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  padding: 6px 12px;
   cursor: pointer;
-  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 16px;
 }
 
-.login-btn {
-  background-color: #4caf50;
-  color: white;
-}
-
-.register-btn {
-  background-color: #1b5e20;
-  color: white;
+.logout-btn:hover {
+  background-color: #43a047;
 }

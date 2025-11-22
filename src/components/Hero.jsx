@@ -4,7 +4,7 @@ function Hero() {
   return (
     <section style={styles.hero}>
       <div style={styles.overlay}>
-        <h1 style={styles.title}>Bring Nature Into Your Home 🌿</h1>
+        <h1 style={styles.title}>Bring Nature Into Your Home </h1>
         <p style={styles.subtitle}>
           Explore our handpicked indoor plants and make your space greener.
         </p>
@@ -18,15 +18,16 @@ const styles = {
   hero: {
     height: "70vh",
     backgroundImage:
-      "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80')",
+      "url('https://thumbs.dreamstime.com/b/sunny-living-room-large-green-velvet-sofa-many-potted-plants-exposed-brick-walls-big-windows-create-bright-natural-space-sunny-412972869.jpg?w=1400')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: "1rem",
   },
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    backgroundColor: "rgba(33, 97, 38, 0.6)",
     color: "white",
     padding: "40px",
     borderRadius: "12px",
@@ -41,7 +42,7 @@ const styles = {
     marginBottom: "20px",
   },
   button: {
-    backgroundColor: "#81c784",
+    backgroundColor: "#17781c",
     color: "white",
     border: "none",
     padding: "10px 20px",

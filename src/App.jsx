@@ -1,31 +1,26 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import PlantsList from "./components/PlantsList";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 import PlantDetails from "./pages/PlantDetails";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import PrivateRoute from "./routes/PrivateRoute";  // ✅ নতুন import
+import Profile from "./pages/Profile";
+import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   return (
     <Router>
+      {/* Navbar সব পেজে থাকবে */}
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <PlantsList />
-              <Footer />
-            </>
-          }
-        />
 
-        {/* ✅ এখন PlantDetails শুধু লগইন করা ইউজাররাই দেখতে পারবে */}
+      <Routes>
+        {/* Home Page */}
+        <Route path="/" element={<Home />} />
+
+        {/* Protected Plant Details */}
         <Route
           path="/plants/:id"
           element={
@@ -35,12 +30,25 @@ function App() {
           }
         />
 
+        {/* Protected My Profile Page */}
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+
+        {/* Auth Pages */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
+
+      {/* Footer সব পেজে থাকবে */}
+      <Footer />
     </Router>
   );
 }
 
 export default App;
-

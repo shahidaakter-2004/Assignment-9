@@ -4,9 +4,10 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Login() {
-  const { loginUser, googleLogin } = useContext(AuthContext); // make sure names match AuthContext
+  const { loginUser, googleLogin, resetPassword } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -15,7 +16,6 @@ function Login() {
     e.preventDefault();
     try {
       await loginUser(email, password);
-      // after successful login, go to intended route
       navigate(from, { replace: true });
     } catch (error) {
       alert("❌ " + error.message);
@@ -26,6 +26,19 @@ function Login() {
     try {
       await googleLogin();
       navigate(from, { replace: true });
+    } catch (error) {
+      alert("❌ " + error.message);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      alert("Please enter your email in the email field, then click Forgot Password.");
+      return;
+    }
+    try {
+      await resetPassword(email);
+      alert("✅ Password reset email sent. Check your inbox.");
     } catch (error) {
       alert("❌ " + error.message);
     }
@@ -43,22 +56,40 @@ function Login() {
           required
           style={styles.input}
         />
-        <input
-          type="password"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={styles.input}
-        />
+        <div style={{ position: "relative", width: "250px" }}>
+          <input
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={styles.input}
+          />
+          <button
+            type="button"
+            onClick={() => setPasswordVisible(!passwordVisible)}
+            style={{ position: "absolute", right: 8, top: 8, background: "transparent", border: "none", cursor: "pointer" }}
+          >
+            {passwordVisible ? "Hide" : "Show"}
+          </button>
+        </div>
+
         <button type="submit" style={styles.btn}>
           Login
         </button>
       </form>
 
-      <button onClick={handleGoogleLogin} style={styles.googleBtn}>
-        Login with Google
-      </button>
+      <div style={{ marginTop: 10 }}>
+        <button onClick={handleForgotPassword} style={styles.linkBtn}>
+          Forgot Password
+        </button>
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <button onClick={handleGoogleLogin} style={styles.googleBtn}>
+          Login with Google
+        </button>
+      </div>
     </div>
   );
 }
@@ -69,6 +100,7 @@ const styles = {
   input: { padding: "10px", width: "250px", borderRadius: "6px", border: "1px solid #ccc" },
   btn: { backgroundColor: "#4CAF50", color: "white", border: "none", padding: "10px 20px", borderRadius: "6px", cursor: "pointer" },
   googleBtn: { marginTop: "10px", backgroundColor: "#DB4437", color: "white", border: "none", padding: "10px 20px", borderRadius: "6px", cursor: "pointer" },
+  linkBtn: { background: "none", border: "none", color: "#1e88e5", cursor: "pointer", textDecoration: "underline" },
 };
 
 export default Login;
