@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Assignment-9/static/css/main.2fde5826.css",
+    "main.js": "/Assignment-9/static/js/main.c5ad543c.js",
+    "static/media/eco-logo-removebg-preview.png": "/Assignment-9/static/media/eco-logo-removebg-preview.8942eedf2ca8cc70e9b2.png",
+    "index.html": "/Assignment-9/index.html",
+    "main.2fde5826.css.map": "/Assignment-9/static/css/main.2fde5826.css.map",
+    "main.c5ad543c.js.map": "/Assignment-9/static/js/main.c5ad543c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2fde5826.css",
+    "static/js/main.c5ad543c.js"
+  ]
+}
