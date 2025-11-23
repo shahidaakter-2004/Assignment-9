@@ -6,7 +6,6 @@ function PlantDetails() {
   const { id } = useParams();
   const [plant, setPlant] = useState(null);
 
-  // consultation form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [bookingMsg, setBookingMsg] = useState("");
@@ -21,41 +20,154 @@ function PlantDetails() {
       .catch((err) => console.error(err));
   }, [id]);
 
-  if (!plant) return <h2 style={{ padding: 20 }}>Loading...</h2>;
+  if (!plant) return <h2 style={styles.loading}>Loading...</h2>;
 
   const handleBooking = (e) => {
     e.preventDefault();
-    // simple UI-only booking — in real app you'd POST to backend
-    setBookingMsg(`✅ Thanks ${name || "guest"}! Consultation requested for ${plant.plantName}. We'll contact ${email || "you"} soon.`);
+
+    setBookingMsg(
+      `✅ Thanks ${name || "guest"}! Consultation requested for ${plant.plantName}. We'll contact ${email || "you"} soon.`
+    );
+
     setName("");
     setEmail("");
     setTimeout(() => setBookingMsg(""), 6000);
   };
 
   return (
-    <div style={{ padding: "30px", textAlign: "center" }}>
-      <img src={plant.image} alt={plant.plantName} width="300" style={{ borderRadius: 12 }} />
-      <h2>{plant.plantName}</h2>
-      <p>{plant.description}</p>
-      <p>💲 Price: {plant.price}</p>
-      <p>⭐ Rating: {plant.rating}</p>
-      <p>🪴 Stock: {plant.availableStock}</p>
+    <div style={styles.page}>
 
-      <hr style={{ margin: "20px 0" }} />
+     
+     <div style={styles.container}>
+  <img src={plant.image} alt={plant.plantName} style={styles.image} />
 
-      <h3>Book Consultation</h3>
-      <form onSubmit={handleBooking} style={{ display: "flex", flexDirection: "column", gap: 10, alignItems: "center", marginTop: 12 }}>
-        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name" style={inputStyle} />
-        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email" style={inputStyle} />
-        <button type="submit" style={btnStyle}>Book Now</button>
+  <div>
+    <h2 style={styles.title}>{plant.plantName}</h2>
+    <p style={styles.text}>Category:{plant.category}</p>
+    <p style={styles.text}>{plant.description}</p>
+    <p style={styles.text}>Price: {plant.price}</p>
+    <p style={styles.text}>Rating: {plant.rating}</p>
+    <p style={styles.text}>Stock: {plant.availableStock}</p>
+    <p style={styles.text}>Care Level: {plant.careLevel}</p>
+
+    
+  </div>
+</div>
+
+
+      <hr style={styles.hr} />
+
+      <h3 style={styles.subtitle}>Book Consultation</h3>
+
+      <form onSubmit={handleBooking} style={styles.form}>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Your Name"
+          style={styles.input}
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your Email"
+          style={styles.input}
+        />
+        <button type="submit" style={styles.btn}>Book Now</button>
       </form>
 
-      {bookingMsg && <p style={{ marginTop: 12 }}>{bookingMsg}</p>}
+      {bookingMsg && <p style={styles.bookingMsg}>{bookingMsg}</p>}
     </div>
   );
 }
 
-const inputStyle = { padding: 10, width: 260, borderRadius: 6, border: "1px solid #ccc" };
-const btnStyle = { padding: "8px 16px", backgroundColor: "#81c784", color: "white", border: "none", borderRadius: 6, cursor: "pointer" };
+const styles = {
+  page: {
+    padding: "30px",
+  },
+
+  container: {
+  display: "flex",
+  gap: "40px",
+  alignItems: "center",
+  justifyContent: "center",
+  marginBottom: "20px",
+},
+
+  
+  image: {
+    width: "400px",
+    borderRadius: 12,
+  },
+
+  rightBox: {
+    flex: 1,
+    minWidth: "280px",
+  },
+
+  loading: {
+    padding: "20px",
+  },
+
+  title: {
+    fontSize: "35px",
+    fontWeight: 600,
+    marginTop: "12px",
+    marginBottom: "8px",
+  },
+
+  subtitle: {
+    fontSize: "20px",
+    fontWeight: 600,
+    marginTop: "16px",
+    marginBottom: "12px",
+    fontFamily: "Poppins, sans-serif",
+    textAlign: "center",
+  },
+
+  text: {
+    marginBottom: "6px",
+    fontSize: "20px",
+    fontWeight: "500 ",
+  },
+
+  hr: {
+    margin: "20px 0",
+    border: "none",
+    height: "1px",
+    backgroundColor: "#17781c",
+  },
+
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+    alignItems: "center",
+    marginTop: "12px",
+  },
+
+  input: {
+    width: "260px",
+    padding: "12px",
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    fontSize: "14px",
+    outline: "none",
+  },
+
+  btn: {
+    padding: "8px 16px",
+    backgroundColor: "#17781c",
+    color: "white",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    fontSize: "14px",
+  },
+
+  bookingMsg: {
+    marginTop: "14px",
+    fontSize: "18px",
+  },
+};
 
 export default PlantDetails;
