@@ -1,9 +1,8 @@
-// src/components/Navbar.jsx
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/eco-logo-removebg-preview.png";
 import { AuthContext } from "../context/AuthContext";
-import "./Navbar.css"; // CSS IMPORT MUST!
+import "./Navbar.css"; 
 
 function Navbar() {
   const { user, logout } = useContext(AuthContext);
@@ -11,13 +10,13 @@ function Navbar() {
   return (
     <nav className="navbar">
       
-      {/* Left: Logo + Title */}
+      
       <div className="logo-container">
         <img src={logo} alt="GreenNest Logo" className="logo" />
         <h1 className="title">GreenNest</h1>
       </div>
 
-      {/* Right: Links */}
+   
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/plants/1">Plants</Link>

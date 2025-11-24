@@ -1,4 +1,3 @@
-// src/pages/Signup.jsx
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
@@ -124,7 +123,6 @@ function Signup() {
     </div>
   );
 }
-
 const styles = {
   page: {
     minHeight: "50vh",

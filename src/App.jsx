@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -13,14 +12,9 @@ import PrivateRoute from "./routes/PrivateRoute";
 function App() {
   return (
     <Router>
-      {/* Navbar সব পেজে থাকবে */}
       <Navbar />
-
       <Routes>
-        {/* Home Page */}
         <Route path="/" element={<Home />} />
-
-        {/* Protected Plant Details */}
         <Route
           path="/plants/:id"
           element={
@@ -29,8 +23,6 @@ function App() {
             </PrivateRoute>
           }
         />
-
-        {/* Protected My Profile Page */}
         <Route
           path="/profile"
           element={
@@ -39,13 +31,11 @@ function App() {
             </PrivateRoute>
           }
         />
-
-        {/* Auth Pages */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
 
-      {/* Footer সব পেজে থাকবে */}
+  
       <Footer />
     </Router>
   );

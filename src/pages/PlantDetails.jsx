@@ -1,4 +1,3 @@
-// src/pages/PlantDetails.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 

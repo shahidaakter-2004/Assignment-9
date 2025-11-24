@@ -1,5 +1,3 @@
-// src/pages/Profile.jsx
-
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
@@ -9,16 +7,16 @@ function Profile() {
   const [showModal, setShowModal] = useState(false);
   const [displayName, setDisplayName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState("");
-  const [localImage, setLocalImage] = useState(null); // NEW
+  const [localImage, setLocalImage] = useState(null); 
   const [message, setMessage] = useState("");
 
-  // When selecting a local image
+  
   const handleLocalImage = (e) => {
     const file = e.target.files[0];
     if (file) {
       const localURL = URL.createObjectURL(file);
       setLocalImage(localURL);
-      setPhotoURL(localURL); // Use the local preview as photoURL
+      setPhotoURL(localURL); 
     }
   };
 
@@ -48,7 +46,7 @@ function Profile() {
 
       {message && <p style={styles.message}>{message}</p>}
 
-      {/* LIVE PROFILE IMAGE */}
+    
       <img
         src={user.photoURL || "https://via.placeholder.com/200"}
         width="200"
@@ -68,7 +66,7 @@ function Profile() {
         Update Profile
       </button>
 
-      {/* POPUP */}
+      
       {showModal && (
         <div style={styles.modalOverlay}>
           <div style={styles.modalBox}>
@@ -85,7 +83,7 @@ function Profile() {
                 onChange={(e) => setDisplayName(e.target.value)}
               />
 
-              {/* Photo URL */}
+              
               <label style={{ fontSize: "16px" }}><strong>Photo URL:</strong></label>
               <input
                 type="text"
@@ -95,7 +93,7 @@ function Profile() {
                 onChange={(e) => setPhotoURL(e.target.value)}
               />
 
-              {/* FILE UPLOAD OPTION */}
+              
               <label style={{ fontSize: "16px" }}><strong>Upload from Device:</strong></label>
               <input
                 type="file"
@@ -104,7 +102,7 @@ function Profile() {
                 onChange={handleLocalImage}
               />
 
-              {/* LIVE PREVIEW */}
+              
               {localImage && (
                 <img
                   src={localImage}
@@ -139,8 +137,6 @@ function Profile() {
     </div>
   );
 }
-
-/* ------------------ STYLES ------------------ */
 const styles = {
   container: {
     width: "450px",
