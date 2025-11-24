@@ -133,7 +133,7 @@ const styles = {
     alignItems: "center",
     background: "#fff",
     padding: "20px",
-  },
+   },
   box: {
     width: "360px",
     padding: "24px",
